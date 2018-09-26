@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-deployment
+  lables:
+    app: my-deployment
+    purpose: k8s-workshop
+spec:
+  selector:
+    matchLabels: 
+      app: my-pod
+      purpose: k8s-workshop
+  template:
+    metadata:
+      labels:
+        app: my-pod
+        purpose: k8s-workshop
+    spec:
+      containers:
+      - name: my-container
+        image: gutek/dumpster:0.1
+        ports:
+        - containerPort: 80
+---
+SERVICE
+

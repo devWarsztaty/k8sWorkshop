@@ -1,0 +1,1 @@
+kubectl delete all -l purpose=k8s-workshop
